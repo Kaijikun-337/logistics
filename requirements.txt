@@ -1,0 +1,4 @@
+# Python dependencies for the Gross Board parser CLI (scripts/)
+# The web app does NOT need these — it has its own TypeScript parser.
+pandas>=2.0
+openpyxl>=3.1

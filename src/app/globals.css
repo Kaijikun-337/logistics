@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+@theme {
+  --color-canvas: #f2f0ea;
+  --color-canvas-deep: #e9e5da;
+  --color-surface: #ffffff;
+  --color-ink: #131a17;
+  --color-ink-soft: #3c4741;
+  --color-muted: #737d77;
+  --color-line: #e4dfd4;
+  --color-line-strong: #d1cabb;
+  --color-brand: #12564a;
+  --color-brand-deep: #0a352d;
+  --color-brand-soft: #e3efe9;
+  --color-accent: #dd5f2a;
+  --color-accent-soft: #fbe9df;
+
+  --font-sans: "Inter", "SF Pro Text", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "SFMono-Regular", ui-monospace, "JetBrains Mono", Menlo, Consolas, monospace;
+
+  --shadow-card: 0 1px 2px rgba(19, 26, 23, 0.04), 0 18px 44px -28px rgba(19, 26, 23, 0.35);
+  --shadow-lift: 0 2px 4px rgba(19, 26, 23, 0.05), 0 26px 60px -30px rgba(19, 26, 23, 0.45);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+  }
+
+  ::selection {
+    background: #cfe4da;
+    color: #0a352d;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .dot-grid {
+    background-image: radial-gradient(rgba(18, 86, 74, 0.16) 1px, transparent 1px);
+    background-size: 18px 18px;
+  }
+
+  .hairline {
+    box-shadow: inset 0 -1px 0 var(--color-line);
+  }
+
+  .num {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .scroll-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #cfc8b8 transparent;
+  }
+
+  .scroll-thin::-webkit-scrollbar {
+    height: 10px;
+    width: 10px;
+  }
+
+  .scroll-thin::-webkit-scrollbar-thumb {
+    background: #d5cec0;
+    border-radius: 999px;
+    border: 3px solid transparent;
+    background-clip: content-box;
+  }
+
+  .animate-rise {
+    animation: rise 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .animate-fade {
+    animation: fade 0.35s ease both;
+  }
+
+  .animate-slide-in {
+    animation: slide-in 0.32s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .animate-bar {
+    animation: bar-grow 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bar-grow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-rise,
+  .animate-fade,
+  .animate-slide-in,
+  .animate-bar {
+    animation: none;
+  }
+}

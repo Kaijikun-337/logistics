@@ -1,0 +1,53 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.*
+
+# Next.js build output
+.next/
+out/
+build/
+dist/
+next-env.d.ts
+*.tsbuildinfo
+
+# Environment files — never commit real credentials
+.env
+.env.local
+.env.*.local
+.env.production
+.env.development
+
+# Python (scripts/)
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+
+# Generated parser output
+/out-parser/
+scripts/out/
+driver_days.csv
+driver_summary.csv
+gross_board.json
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Deployment / tooling caches
+.vercel
+.netlify
+.turbo
+coverage/
